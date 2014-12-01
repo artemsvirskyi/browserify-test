@@ -1,0 +1,21 @@
+{
+	"id": "D:\\nginx\\html\\browserify-test\\some.js",
+	"source": "console.log('some');",
+	"deps": {},
+	"file": "D:\\nginx\\html\\browserify-test\\some.js"
+}{
+	"id": "D:\\nginx\\html\\browserify-test\\foo.js",
+	"source": "module.exports = function(){\r\n\tconsole.log('foo');\r\n};\r\n\r\nrequire('some');\r\n\r\nconsole.log(100);",
+	"deps": {
+		"some": "D:\\nginx\\html\\browserify-test\\some.js"
+	},
+	"file": "D:\\nginx\\html\\browserify-test\\foo.js"
+}{
+	"file": "D:\\nginx\\html\\browserify-test\\main.js",
+	"id": "D:\\nginx\\html\\browserify-test\\main.js",
+	"source": "var foo = require('foo');\r\n\r\nfoo();",
+	"deps": {
+		"foo": "D:\\nginx\\html\\browserify-test\\foo.js"
+	},
+	"entry": true
+}
