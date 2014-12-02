@@ -1,6 +1,6 @@
 {
   "name": "browserify-test",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "",
   "main": "main.js",
   "scripts": {
@@ -17,7 +17,8 @@
     "module-deps": "^3.5.10",
     "through2": "^0.6.3",
     "through": "^2.3.6",
-    "labeled-stream-splicer": "^1.0.2"
+    "labeled-stream-splicer": "^1.0.2",
+    "browser-resolve": "^1.4.1"
   },
   "browser": {
     "foo": "./foo.js",
