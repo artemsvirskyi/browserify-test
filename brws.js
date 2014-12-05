@@ -1,14 +1,12 @@
 var fs = require('fs'),
 	file = fs.createWriteStream('bundle.js'),
 	Browserify = require('browserify'),
-/*	aliasify  = require('aliasify').configure({
-	    aliases: {
-	        "foo": "./foo-shim.js"
-	    }
-	}), */
-	b;
+	b,
+	path = require('path'),
+	resolve = require('./src/resolve');
 
-b = new Browserify('./main.js');
+var fs = require('fs');
 
-// b.transform(aliasify);
+b = new Browserify('./main.js', {resolve: resolve});
+
 b.bundle().pipe(file);

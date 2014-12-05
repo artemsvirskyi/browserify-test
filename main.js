@@ -1,3 +1,1 @@
-var foo = require('foo');
-
-foo();
+// require('path');
