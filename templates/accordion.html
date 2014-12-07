@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="format-detection" content="telephone=no">
+	<title>Cobalt</title>
+
+	<!-- components -->
+	<link rv-component="components/accordion">
+	<!-- /components -->
+
+	<!-- styles -->
+	<link rel="stylesheet" href="engine/css/app.css">
+	<link rel="stylesheet" href="components/accordion/accordion.css">
+	<link rel="stylesheet" href="styles/accordion.css">
+	<!-- /styles -->
+</head>
+<body>
+	<article class="slide"
+		rv-controller="accordion"
+		><rv-template name="layout"></rv-template>
+		<h1 rv-html="t.header"></h1>
+		<!-- <button rv-on-tap="addTab">add Tab</button> -->
+		<!-- <button rv-on-tap="removeTab">remove Tab</button> -->
+		<div class="wrapper">
+			<div class="accordion accordion-horizontal"
+				rv-class-no-trans="isInitialTab"
+				rv-accordion
+				rv-accordion-index="activeTabIndex"
+				rv-disabled="disabledAccordion"
+				rv-on-tableave="onTabLeave">
+
+				<div rv-each-tab="tabs" class="accordion-tab panel panel-default">
+					<h2 class="tab-header panel-heading panel-title" rv-html="tab.header"></h2>
+					<div class="tab-content">
+						<div class="tab-content-wrapper" rv-html="tab.content"></div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<rv-template name="readme"></rv-template>
+	</article>
+
+	<!-- scripts -->
+	<script src="../spa/bundle.js"></script>
+	<!-- scripts -->
+</body>
+</html>

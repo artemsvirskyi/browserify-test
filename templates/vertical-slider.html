@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="format-detection" content="telephone=no">
+	<title>Cobalt</title>
+
+	<!-- components -->
+	<link rv-component="components/slider">
+	<!-- /components -->
+
+	<!-- styles -->
+	<link rel="stylesheet" href="engine/css/app.css">
+	<link rel="stylesheet" href="styles/vertical-slider.css">
+	<!-- /styles -->
+</head>
+<body>
+<article class="slide" rv-controller="vertical-slider">
+	<rv-template name="layout"></rv-template>
+	<h1 rv-html="t.header"></h1>
+	<div class="box outer">
+		<div class="box inner">
+			<div class="sliders">
+				<div class="slider progress" rv-slider rv-value="value" rv-min="min" rv-max="max" rv-step="step" rv-fill="fill"
+						data-prevent-right-swipe="true" data-prevent-left-swipe="true">
+					<div class="slider-fill progress-bar progress-bar-info"></div>
+					<div class="slider-handler btn btn-lg btn-primary"></div>
+				</div>
+				<div class="slider progress" rv-slider rv-value="value" rv-min="min" rv-max="max" rv-step="step" rv-fill="fill" rv-reverse="reverce" rv-on-blur="sendMonitoring"
+						data-prevent-right-swipe="true" data-prevent-left-swipe="true">
+					<div class="slider-fill progress-bar progress-bar-info"></div>
+					<div class="slider-handler btn btn-lg btn-primary"></div>
+				</div>
+			</div>
+			<div class="box info panel panel-info">
+				<div class="panel-heading">
+					<h3 class="panel-title" rv-html="t.settings"></h3>
+				</div>
+				<div class="panel-body form-inline">
+					<div>
+						<span rv-html="t.value"></span><input rv-value="value" class="form-control">
+					</div>
+					<div>
+						<span rv-html="t.min"></span><input rv-value="min" class="form-control">
+					</div>
+					<div>
+						<span rv-html="t.max"></span><input rv-value="max" class="form-control">
+					</div>
+					<div>
+						<span rv-html="t.step"></span><input rv-value="step" class="form-control">
+					</div>
+					<div>
+						<span rv-html="t.fill"></span><input type="checkbox" rv-checked="fill">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<rv-template name="readme"></rv-template>
+</article>
+
+<script src="../spa/bundle.js"></script>
+</body>
+</html>

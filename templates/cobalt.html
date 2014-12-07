@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="format-detection" content="telephone=no">
+	<title>Cobalt</title>
+
+	<!-- components -->
+	<!-- /components -->
+
+	<!-- styles -->
+	<link rel="stylesheet" href="engine/css/app.css">
+	<!-- /styles -->
+</head>
+<body>
+<article class="slide">
+	<rv-template name="layout"></rv-template>
+
+	<h1 rv-html="t.header"></h1>
+	<p><span rv-html="t.greetingPart1"></span><a rv-html="t.greetingLink" href="http://git.qapint.com/cobalt/engine"></a> &mdash; <span rv-html="t.greetingPart2"></span></p>
+
+	<p rv-html="t.content1"></p>
+	
+	<pre rv-html="t.code1"></pre>
+
+	<p rv-html="t.content2"></p>
+
+	<pre rv-html="t.code2"></pre>
+
+	<p rv-html="t.content3"></p>
+	<img src="media/images/common/qap-logo.png" />
+</article>
+
+<script src="../spa/bundle.js"></script>
+</body>
+</html>

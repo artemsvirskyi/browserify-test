@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="format-detection" content="telephone=no">
+	<title>Cobalt</title>
+
+	<!-- components -->
+	<!-- /components -->
+
+	<!-- styles -->
+	<link rel="stylesheet" href="engine/css/app.css">
+	<link rel="stylesheet" href="styles/slidePopup.css">
+	<!-- /styles -->
+</head>
+<body>
+	<article class="slide" rv-controller="slidePopup">
+		<div id="wrap">
+			<rv-template name="layout"></rv-template>
+		</div>
+		<h1 rv-html="t.header"></h1>
+		<button rv-on-tap="openPopup" rv-html="t.openButton" class="btn btn-lg btn-primary"></button>
+		<button rv-on-tap="closePopup" rv-html="t.closeButton" class="btn btn-lg btn-primary"></button><br/>
+		<button rv-on-tap="openSlideshowPopup" rv-html="t.openSlideshowButton" class="bottom-btn btn btn-lg btn-primary"></button>
+		<button rv-on-tap="collectSlideshowPopup" rv-html="t.collectSlideshowButton" class="bottom-btn btn btn-lg btn-primary"></button>
+		<button rv-on-tap="closeSlideshowPopup" rv-html="t.closeSlideshowButton" class="bottom-btn btn btn-lg btn-primary"></button>
+	</article>
+
+	<script src="../spa/bundle.js"></script>
+</body>
+</html>

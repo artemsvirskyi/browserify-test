@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="format-detection" content="telephone=no">
+	<title>Cobalt</title>
+
+	<!-- components -->
+	<link rv-component="components/references">
+	<!-- /components -->
+
+	<!-- styles -->
+	<link rel="stylesheet" href="engine/css/app.css">
+	<link rel="stylesheet" href="components/references/references.css">
+	<link rel="stylesheet" href="components/references/short-references.css">
+	<link rel="stylesheet" href="styles/common/references.css">
+	<link rel="stylesheet" href="styles/common/design.css">
+	<link rel="stylesheet" href="styles/references-slide.css">
+	<!-- /styles -->
+</head>
+<body>
+	<article class="slide" rv-controller="references-slide">
+		<rv-template name="layout"></rv-template>
+		<h1 rv-html="t.header"></h1>
+
+		<div class="wrap">
+			<h3>
+				<span rv-html="t.simple"></span><sup rv-references="ref1 ref3">
+			</h3>
+			<button class="change" rv-on-tap="changeReferences">
+				<span rv-html="t.dynamic"></span><sup rv-references="dynamicReferences"></sup>
+			</button>
+			<h3 rv-html="t.localization"></h3>
+			<h3 rv-html="t.inside"></h3>
+		</div>
+
+		<rv-template name="readme"></rv-template>
+	</article>
+
+	<script src="../spa/bundle.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="format-detection" content="telephone=no">
+	<title>Cobalt</title>
+
+	<!-- styles -->
+	<link rel="stylesheet" href="engine/css/app.css">
+	<link rel="stylesheet" href="styles/send-mail.css">
+	<!-- /styles -->
+</head>
+<body>
+	<article class="slide" rv-controller="send-mail">
+		<rv-template name="layout"></rv-template>
+		<h1 rv-html="t.header"></h1>
+		<div class="box info panel panel-info">
+			<div class="panel-heading">
+				<h3 class="panel-title" rv-html="t.settings"></h3>
+			</div>
+			<div class="panel-body form-inline">
+				<div>
+					<span rv-html="t.to"></span><input rv-value="mail.to" class="form-control" type="email">
+				</div>
+				<div>
+					<span rv-html="t.subject"></span><input rv-value="mail.subject" class="form-control">
+				</div>
+				<div>
+					<span rv-html="t.body"></span><textarea rv-value="mail.body" class="form-control"></textarea>
+				</div>
+				<div>
+					<span rv-html="t.attachPdf"></span><input type="checkbox" rv-checked="attachPdf">
+				</div>
+				<div>
+					<span rv-html="t.attachImg"></span><input type="checkbox" rv-checked="attachImg"><img src="media/images/send-mail/cookies.jpeg" width="213" height="177"/>
+				</div>
+			</div>
+		</div>
+		<button rv-on-tap="sendMail" class="btn btn-lg btn-primary" rv-html="t.button"></button>
+	</article>
+
+	<script src="../spa/bundle.js"></script>
+</body>
+</html>

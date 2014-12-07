@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="format-detection" content="telephone=no">
+	<title>Cobalt</title>
+
+	<!-- components -->
+	<link rv-component="components/draggable">
+	<!-- /components -->
+
+	<!-- styles -->
+	<link rel="stylesheet" href="engine/css/app.css">
+	<link rel="stylesheet" href="styles/draggable.css">
+	<!-- /styles -->
+</head>
+<body>
+<article class="slide" rv-controller="draggable">
+	<rv-template name="layout"></rv-template>
+
+	<h1 rv-html="t.h1"></h1>
+	<div class="box">
+		<div class="draggables">
+			<div class="draggable btn btn-lg btn-primary"
+				rv-each-item="draggables"
+				rv-draggable="item" fixed
+				rv-on-dragstart="start"
+				rv-on-dragend="end"
+				rv-class-active="item.active"
+				rv-html="item.data"
+				rv-data-eid="item.eid"
+				data-prevent-right-swipe="true" data-prevent-left-swipe="true"></div>
+		</div>
+
+		<div>
+			<div class="dropzone alert alert-success" rv-dropzone>
+				<p rv-html="t.dropzone"></p>
+			</div>
+
+			<div class="draglist alert alert-info" rv-draglist>
+				<p rv-html="t.draglist"></p>
+			</div>
+		</div>
+	</div>
+	<rv-template name="readme"></rv-template>
+</article>
+
+<script src="../spa/bundle.js"></script>
+</body>
+</html>

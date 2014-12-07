@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="format-detection" content="telephone=no">
+
+	<title>Cobalt</title>
+
+	<!-- components -->
+	<link rv-component="components/flip">
+	<!-- /components -->
+
+	<!-- styles -->
+	<link rel="stylesheet" href="engine/css/app.css">
+	<!--<link rel="stylesheet" href="components/flip/flip.css">-->
+	<link rel="stylesheet" href="styles/vertical-flip.css">
+	<!-- /styles -->
+</head>
+<body>
+	<article class="slide" rv-controller="flip-controller">
+		<rv-template name="layout"></rv-template>
+		<h1 rv-html="t.h1"></h1>
+
+		<div class="flip-container" rv-flip="isFlipped">
+			<div class="side front alert alert-info">
+				<p rv-html="t.pFront"></p>
+				<button rv-on-tap="flip"></button>
+			</div>
+			<div class="side back alert alert-danger">
+				<p rv-html="t.pBack"></p>
+				<button rv-on-tap="flip"></button>
+			</div>
+		</div>
+		<rv-template name="readme"></rv-template>
+	</article>
+
+	<script src="../spa/bundle.js"></script>
+</body>
+</html>

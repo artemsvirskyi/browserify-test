@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="format-detection" content="telephone=no">
+	<title>Cobalt</title>
+
+	<!-- components -->
+	<link rv-component="components/carousel">
+	<!-- /components -->
+
+	<!-- styles -->
+	<link rel="stylesheet" href="engine/css/app.css">
+	<link rel="stylesheet" href="components/carousel/styles.css">
+	<link rel="stylesheet" href="styles/carousel3.css">
+	<!-- /styles -->
+</head>
+<body>
+	<article class="slide" rv-controller="carousel3">
+		<rv-template name="layout"></rv-template>
+		<h1 rv-html="t.h1"></h1>
+
+		<div class="carousel-container">
+			<div class="carousel centered" rv-item="curIndex" rv-carousel="options" data-prevent-right-swipe="true" data-prevent-left-swipe="true" rv-class-disable-trans="disableTransition">
+				<div class="panel panel-info carousel-item">
+					<div class="panel-heading">
+						<h3 class="panel-title" rv-html="t.h3First"></h3>
+					</div>
+					<div class="panel-body" rv-html="t.content1"></div>
+				</div>
+				<div class="panel panel-info carousel-item">
+					<div class="panel-heading">
+						<h3 class="panel-title" rv-html="t.h3Second"></h3>
+					</div>
+					<div class="panel-body" rv-html="t.content2"></div>
+				</div>
+				<div class="panel panel-info carousel-item">
+					<div class="panel-heading">
+						<h3 class="panel-title" rv-html="t.h3Third"></h3>
+					</div>
+					<div class="panel-body" rv-html="t.content3"></div>
+				</div>
+				<div class="panel panel-info carousel-item">
+					<div class="panel-heading">
+						<h3 class="panel-title" rv-html="t.h3Fourth"></h3>
+					</div>
+					<div class="panel-body" rv-html="t.content4"></div>
+				</div>
+				<div class="panel panel-info carousel-item">
+					<div class="panel-heading">
+						<h3 class="panel-title" rv-html="t.h3Fifth"></h3>
+					</div>
+					<div class="panel-body" rv-html="t.content5"></div>
+				</div>
+				<div class="panel panel-info carousel-item">
+					<div class="panel-heading">
+						<h3 class="panel-title" rv-html="t.h3Sixth"></h3>
+					</div>
+					<div class="panel-body" rv-html="t.content6"></div>
+				</div>
+			</div>
+		</div>
+		<div class="set-item">
+			<label rv-html="t.setItem"></label>
+			<select rv-value="curIndex">
+				<option value="0">1</option>
+				<option value="1">2</option>
+				<option value="2">3</option>
+				<option value="3">4</option>
+				<option value="4">5</option>
+				<option value="5">6</option>
+			</select>
+		</div>
+
+		<rv-template name="readme"></rv-template>
+	</article>
+
+	<script src="../spa/bundle.js"></script>
+</body>
+</html>

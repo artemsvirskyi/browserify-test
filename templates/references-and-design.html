@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="format-detection" content="telephone=no">
+	<title>Cobalt</title>
+
+	<!-- components -->
+	<link rv-component="components/references">
+	<link rv-component="components/design">
+	<!-- /components -->
+
+	<!-- styles -->
+	<link rel="stylesheet" href="engine/css/app.css">
+	<link rel="stylesheet" href="styles/common/references-and-design.css">
+	<link rel="stylesheet" href="components/references/short-references.css">
+	<!-- /styles -->
+</head>
+<body>
+	<article class="slide" rv-design="des1 des3 des2 des5" rv-controller="references-controller">
+		<rv-template name="menu"></rv-template>
+		<rv-template name="sitemap"></rv-template>
+		<rv-template name="references-and-design"></rv-template>
+		<rv-template name="short-references"></rv-template>
+		<rv-template name="./components/indicators/indicators"></rv-template>
+		<rv-template name="./components/thumbnails/thumbnails"></rv-template>
+
+		<div rv-if="isDemo" rv-controller="/components/demo/index">
+			<rv-template name="./components/demo/demo"></rv-template>
+		</div>
+
+		<h1><span rv-html="t.header"></span><sup rv-references="ref2 ref1 ref9 ref8 ref5"></sup></h1>
+		<p><span rv-html="t.text"></span><sup rv-references="ref6 ref4 ref7 ref2 ref3"></sup></p>
+		<rv-template name="readme"></rv-template>
+	</article>
+
+	<script src="../spa/bundle.js"></script>
+</body>
+</html>

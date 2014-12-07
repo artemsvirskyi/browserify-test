@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="format-detection" content="telephone=no">
+	<title>Cobalt</title>
+
+	<!-- styles -->
+	<link rel="stylesheet" href="engine/css/app.css">
+	<link rel="stylesheet" href="styles/thumbs-slide.css">
+	<link rel="stylesheet" href="styles/abbott-thumbs.css">
+	<!-- /styles -->
+</head>
+<body>
+	<article class="slide" rv-controller="thumbs">
+		<rv-template name="menu"></rv-template>
+		<rv-template name="sitemap"></rv-template>
+		<rv-template name="references"></rv-template>
+		<rv-template name="short-references"></rv-template>
+		<rv-template name="design"></rv-template>
+		<rv-template name="./components/indicators/indicators"></rv-template>
+		<rv-template name="./components/abbott-thumbnails/thumbnails"></rv-template>
+
+		<div rv-if="isDemo" rv-controller="/components/demo/index">
+			<rv-template name="./components/demo/demo"></rv-template>
+		</div>
+
+		<h1 rv-html="t.header"></h1>
+
+		<button rv-controller="/components/abbott-thumbnails/thumbnails" rv-on-tap="toggleThumbs" rv-html="t.toggle"></button>
+
+		<rv-template name="readme"></rv-template>
+	</article>
+
+	<script src="../spa/bundle.js"></script>
+</body>
+</html>

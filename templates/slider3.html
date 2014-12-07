@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="format-detection" content="telephone=no">
+	<title>Cobalt</title>
+
+	<!-- components -->
+	<link rv-component="components/slider">
+	<!-- /components -->
+
+	<!-- styles -->
+	<link rel="stylesheet" href="engine/css/app.css">
+	<link rel="stylesheet" href="styles/slider3.css">
+	<!-- /styles -->
+</head>
+<body>
+<article class="slide" rv-controller="slider3">
+	<rv-template name="layout"></rv-template>
+	<h1 rv-html="t.header"></h1>
+	<div class="box">
+		<div class="items">
+			<div class="item" rv-each-item="items" rv-class-active="item.active"></div>
+		</div>
+
+		<div class="slider progress" rv-slider reverse="true" rv-value="value" rv-max="maximum" rv-on-change="change" rv-on-blur="sendMonitoring"
+				data-prevent-right-swipe="true" data-prevent-left-swipe="true">
+			<div class="slider-fill progress-bar progress-bar-info"></div>
+			<div class="slider-handler btn btn-lg btn-primary">
+				<output  class="btn btn-lg btn-default" rv-value="value"></output>
+			</div>
+		</div>
+	</div>
+	<rv-template name="readme"></rv-template>
+</article>
+
+<script src="../spa/bundle.js"></script>
+</body>
+</html>

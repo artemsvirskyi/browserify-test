@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="format-detection" content="telephone=no">
+
+	<title>Cobalt</title>
+
+	<!-- components -->
+	<link rv-component="components/round-slider">
+	<!-- /components -->
+
+	<!-- styles -->
+	<link rel="stylesheet" href="engine/css/app.css">
+	<link rel="stylesheet" href="styles/round-slider.css">
+	<!-- /styles -->
+</head>
+<body>
+	<article class="slide" rv-controller="round-slider">
+		<rv-template name="layout"></rv-template>
+		<h1 rv-html="t.header"></h1>
+
+		<div class="round-slider"
+				rv-class-active="active"
+				rv-round-slider
+				rv-radius-x="radiusX"
+				rv-radius-y="radiusY"
+				min="0"
+				max="60"
+				minAngle="24"
+				maxAngle="156"
+				handlerRotate="0"
+				rv-value="value | integer"
+				rv-on-focus="statechange"
+				rv-on-blur="statechange"
+				rv-on-change="change"
+				data-prevent-right-swipe="true" data-prevent-left-swipe="true">
+
+			<output rv-html="value | integer"></output>
+
+			<ul class="wheel-axis">
+				<li class="a--3" rv-html="t.val0"></li>
+				<li class="a--2" rv-html="t.val10"></li>
+				<li class="a--1" rv-html="t.val20"></li>
+				<li class="a-0" rv-html="t.val30"></li>
+				<li class="a-1" rv-html="t.val40"></li>
+				<li class="a-2" rv-html="t.val50"></li>
+				<li class="a-3" rv-html="t.val60"></li>
+			</ul>
+
+			<div class="round-slider-handler"></div>
+		</div>
+
+		<div id="info" class="form-inline">
+			<label>
+				<span rv-html="t.radiusX"></span><input rv-value="radiusX" class="form-control">
+			</label><br>
+			<label>
+				<span rv-html="t.radiusY"></span><input rv-value="radiusY" class="form-control">
+			</label>
+		</div>
+
+		<rv-template name="readme"></rv-template>
+	</article>
+
+	<script src="../spa/bundle.js"></script>
+</body>
+</html>

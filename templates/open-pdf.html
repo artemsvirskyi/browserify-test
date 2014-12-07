@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="format-detection" content="telephone=no">
+	<title>Cobalt</title>
+
+	<!-- styles -->
+	<link rel="stylesheet" href="engine/css/app.css">
+	<!-- /styles -->
+</head>
+<body>
+	<article class="slide" rv-controller="open-pdf">
+		<rv-template name="layout"></rv-template>
+		<h1 rv-html="t.header"></h1>
+		<button rv-on-tap="openPdf" data-pdf="TestPdf.pdf" class="btn btn-lg btn-primary" rv-html="t.button"></button>
+	</article>
+
+	<script src="../spa/bundle.js"></script>
+</body>
+</html>

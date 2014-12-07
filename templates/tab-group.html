@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="format-detection" content="telephone=no">
+	<title>Cobalt</title>
+
+	<!-- components -->
+	<link rv-component="components/tab-group">
+	<!-- /components -->
+
+	<!-- styles -->
+	<link rel="stylesheet" href="engine/css/app.css">
+	<link rel="stylesheet" href="styles/tab-group.css">
+	<!-- /styles -->
+</head>
+<body>
+	<article class="slide" rv-controller="tab-group">
+		<rv-template name="layout"></rv-template>
+
+		<h1 rv-html="t.h1"></h1>
+
+		<div class="tab-group" rv-tabgroup rv-tab-index="activeTabIndex">
+			<nav class="nav-tabs">
+				<button class="btn btn-lg btn-primary tab-btn" rv-each-tab="tabs" rv-html="tab.btn"></button>
+			</nav>
+			<div class="tabs-content well">
+				<div class="tab-panel" rv-each-tab="tabs">
+					<p rv-html="t.text">tab_content_1</p>
+					<img rv-src="tab.src"/>
+				</div>
+			</div>
+		</div>
+
+		<rv-template name="readme"></rv-template>
+	</article>
+
+<script src="../spa/bundle.js"></script>
+</body>
+</html>

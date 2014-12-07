@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="format-detection" content="telephone=no">
+	<title>Cobalt</title>
+
+	<!-- components -->
+	<link rv-component="components/draggable">
+	<!-- /components -->
+
+	<!-- styles -->
+	<link rel="stylesheet" href="engine/css/app.css">
+	<link rel="stylesheet" href="styles/draggable2.css">
+	<!-- /styles -->
+</head>
+<body>
+	<article class="slide" rv-controller="draggable2">
+		<rv-template name="layout"></rv-template>
+
+		<h1 rv-html="t.h1"></h1>
+
+		<div class="zones">
+			<div class="drag-over-zone alert alert-info"
+						rv-each-zone="zones"
+						rv-on-dragenter="dragenter"
+						rv-on-dragleave="dragleave"
+						rv-class-highlight="zone.highlight"
+						rv-html="zone.text"
+						rv-data-eid="zone.eid"
+					data-prevent-right-swipe="true" data-prevent-left-swipe="true"></div>
+		</div>
+
+		<div class="drag-item btn btn-lg btn-primary"
+				rv-draggable
+				rv-on-dragenter="some"
+				rv-on-swipeleft="stop"
+				rv-on-swiperight="stop"
+				rv-on-swipebottom="stop"
+				rv-on-swipeup="stop"
+				rv-html="t.dragItem"></div>
+
+		<rv-template name="readme"></rv-template>
+	</article>
+
+	<script src="../spa/bundle.js"></script>
+</body>
+</html>

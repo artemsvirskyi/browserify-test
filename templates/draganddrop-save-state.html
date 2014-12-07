@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="format-detection" content="telephone=no">
+	<title>Cobalt</title>
+
+	<!-- components -->
+	<link rv-component="components/draggable">
+	<!-- /components -->
+
+	<!-- styles -->
+	<link rel="stylesheet" href="engine/css/app.css">
+	<link rel="stylesheet" href="styles/draganddrop-save-state.css">
+	<!-- /styles -->
+</head>
+<body>
+	<article class="slide" rv-controller="draganddrop-save-state">
+		<rv-template name="layout"></rv-template>
+		<h1 rv-html="t.h1"></h1>
+		<div class="box">
+			<div class="drag-container" rv-on-drop="addToList1">
+				<div class="draggable btn btn-lg btn-primary"
+					rv-each-item="list1"
+					rv-draggable="item" fixed
+					rv-on-dragstart="activateItem"
+					rv-on-dragend="deactivateItem"
+					rv-class-active="item.active"
+					data-prevent-right-swipe="true" data-prevent-left-swipe="true">
+						<p rv-html="item.field" rv-data-eid="item.eid"></p>
+				</div>
+			</div>
+			<div class="drag-container" rv-on-drop="addToList2">
+				<div class="draggable btn btn-lg btn-primary"
+					rv-each-item="list2"
+					rv-draggable="item" fixed
+					rv-on-dragstart="activateItem"
+					rv-on-dragend="deactivateItem"
+					rv-class-active="item.active">
+						<p rv-html="item.field" rv-data-eid="item.eid"></p>
+				</div>
+			</div>
+		</div>
+		<rv-template name="readme"></rv-template>
+	</article>
+
+	<script src="../spa/bundle.js"></script>
+</body>
+</html>

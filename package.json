@@ -1,24 +1,28 @@
 {
-	"name": "browserify-test",
-	"version": "0.0.2",
-	"description": "",
-	"main": "main.js",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
-	},
-	"author": "",
-	"license": "ISC",
-	"dependencies": {
-		"browserify": "^6.3.3",
-		"aliasify": "^1.5.0",
-		"gulp": "^3.8.10",
-		"event-stream": "^3.1.7",
-		"JSONStream": "^0.10.0",
-		"module-deps": "^3.5.10",
-		"through2": "^0.6.3",
-		"through": "^2.3.6",
-		"labeled-stream-splicer": "^1.0.2",
-		"browser-resolve": "^1.4.1",
-		"build-mitouch": "git+ssh://git@git.qapint.com:cobalt-build/mitouch.git"
-	}
+  "name": "browserify-test",
+  "version": "0.0.2",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "JSONStream": "^0.10.0",
+    "aliasify": "^1.5.0",
+    "browser-resolve": "^1.4.1",
+    "browserify": "^6.3.3",
+    "build-mitouch": "git+ssh://git@git.qapint.com:cobalt-build/mitouch.git",
+    "es6-promise": "^2.0.0",
+    "event-stream": "^3.1.7",
+    "gulp": "^3.8.10",
+    "labeled-stream-splicer": "^1.0.2",
+    "module-deps": "^3.5.10",
+    "through": "^2.3.6",
+    "through2": "^0.6.3"
+  },
+  "browser": {
+    "test": "./test.js"
+  }
 }

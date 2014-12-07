@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="format-detection" content="telephone=no">
+	<title>Cobalt</title>
+
+	<!-- components -->
+	<link rv-component="./components/scroller">
+	<link rv-component="./binders/mdown">
+	<!-- /components -->
+
+	<!-- styles -->
+	<link rel="stylesheet" href="engine/css/app.css">
+	<link rel="stylesheet" href="styles/docs.css">
+	<!-- /styles -->
+</head>
+<body>
+<article class="slide" rv-controller="docs-view">
+	<rv-template name="layout"></rv-template>
+	<div class="docs-wrapper">
+		<div class="docs" rv-html="docs | md"></div>
+	</div>
+</article>
+
+<script src="../spa/bundle.js"></script>
+</body>
+</html>

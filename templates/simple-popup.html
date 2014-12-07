@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="format-detection" content="telephone=no">
+	<title>Cobalt</title>
+
+	<!-- styles -->
+	<link rel="stylesheet" href="engine/css/app.css">
+	<!-- /styles -->
+</head>
+<body>
+<article class="slide" rv-controller="popup-controller">
+	<rv-template name="layout"></rv-template>
+	<h1 rv-html="t.header"></h1>
+	<button rv-html="t.popupButton" rv-on-tap="popup.openPopup" class="btn btn-lg btn-primary"></button>
+	<p rv-html="message" rv-data-eid="eid" class="message alert alert-info" rv-class-alert-danger="popup.isActive" ></p>
+	<div class="popup panel panel-info" rv-show="popup.isActive" rv-popup="popup.isActive" rv-on-popupenter="popupenter" rv-on-popupleave="popupleave">
+		<div class="panel-heading">
+			<h3 rv-html="t.popupHeader" class="panel-title"></h3>
+		</div>
+		<div class="panel-body">
+			<p rv-html="t.popupContent"></p>
+		</div>
+		<button class="close-popup" rv-on-tap="popup.closePopup">&times;</button>
+	</div>
+	<rv-template name="readme"></rv-template>
+</article>
+
+<script src="../spa/bundle.js"></script>
+</body>
+</html>

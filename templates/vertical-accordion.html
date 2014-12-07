@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="format-detection" content="telephone=no">
+	<title>Cobalt</title>
+
+	<!-- components -->
+	<link rv-component="components/accordion">
+	<!-- /components -->
+
+	<!-- styles -->
+	<link rel="stylesheet" href="engine/css/app.css">
+	<link rel="stylesheet" href="components/accordion/accordion.css">
+	<link rel="stylesheet" href="styles/vertical-accordion.css">
+	<!-- /styles -->
+</head>
+<body>
+		<article class="slide"
+			rv-controller="vertical-accordion"
+			rv-class-no-trans="isInitialTab"
+			><rv-template name="layout"></rv-template>
+		<h1 rv-html="t.header"></h1>
+		<div class="wrapper">
+			<div class="accordion"
+				rv-accordion
+				rv-accordion-index="activeTabIndex"
+				rv-disabled="disabledAccordion"
+				rv-on-tableave="onTabChange"
+				><div class="accordion-tab panel panel-default" rv-class-no-trans="isInitialTab">
+					<h2 class="tab-header panel-heading panel-title" rv-html="t.tab_header_1"></h2>
+					<div class="tab-content">
+						<div class="tab-content-wrapper" rv-html="t.tab_content_1"></div>
+					</div>
+				</div>
+				<div class="accordion-tab panel panel-default" rv-class-no-trans="isInitialTab">
+					<h2 class="tab-header panel-heading panel-title" rv-html="t.tab_header_2"></h2>
+					<div class="tab-content">
+						<div class="tab-content-wrapper" rv-html="t.tab_content_2"></div>
+					</div>
+				</div>
+				<div class="accordion-tab panel panel-default" rv-class-no-trans="isInitialTab">
+					<h2 class="tab-header panel-heading panel-title" rv-html="t.tab_header_3"></h2>
+					<div class="tab-content">
+						<div class="tab-content-wrapper" rv-html="t.tab_content_3"></div>
+					</div>
+				</div>
+				<div class="accordion-tab panel panel-default" rv-class-no-trans="isInitialTab">
+					<h2 class="tab-header panel-heading panel-title" rv-html="t.tab_header_4"></h2>
+					<div class="tab-content">
+						<div class="tab-content-wrapper" rv-html="t.tab_content_4"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</article>
+	<script src="../spa/bundle.js"></script>
+</body>
+</html>

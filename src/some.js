@@ -1,1 +1,1 @@
-console.log('some');
+require('../foo-shim.js');

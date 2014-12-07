@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<meta name="format-detection" content="telephone=no">
+		<title>Cobalt</title>
+		<!-- components -->
+		<link rv-component="components/coverflow">
+		<!-- /components -->
+		<!-- styles -->
+		<link rel="stylesheet" href="engine/css/app.css">
+		<link rel="stylesheet" href="styles/coverflow.css">
+		<!-- /styles -->
+	</head>
+	<body>
+		<article class="slide" rv-controller="coverflow">
+			<rv-template name="layout"></rv-template>
+			<div class="wrapper">
+				<div class="coverflow" rv-coverflow="index" margin="300">
+					<div class="coverflow-item btn btn-lg btn-primary"></div>
+					<div class="coverflow-item btn btn-lg btn-primary"></div>
+					<div class="coverflow-item btn btn-lg btn-primary"></div>
+					<div class="coverflow-item btn btn-lg btn-primary"></div>
+					<div class="coverflow-item btn btn-lg btn-primary"></div>
+					<div class="coverflow-item btn btn-lg btn-primary"></div>
+				</div>
+			</div>
+			
+			<rv-template name="readme"></rv-template>
+		</article>
+		<script src="../spa/bundle.js"></script>
+	</body>
+</html>
